@@ -1,9 +1,13 @@
 ===========================
+
 #Minetest mod "Lapis"
+
 modified by Napiophelios
+
 ===========================
 
 This mod adds several decorative nodes
+
 based on Lapus Lazuli and Pyrite ore.
 
 Players can mine Lapis and Pyrite ores;
@@ -14,10 +18,15 @@ from the ores' drops.
 =================================
 
 the original Minetest mod:
+
 Lapis Lazuli mod v1.0
+
 Written 2015 by LNJ
+
 License of source code:
 WTFPL
+
+------------------------------------
 
 code refinements by Xanthin
 
