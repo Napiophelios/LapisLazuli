@@ -12,13 +12,6 @@ minetest.register_node( "lapis:lapis_block",  {
    sunlight_propagates = false,
    is_ground_content = true,
    groups = {cracky=3},
-   drop = {
-		max_items = 1,
-		items = {
-			{items = {'lapis:lapis_stone'}, rarity = 10},
-			{items = {'lapis:lapis_cobble'}},
-		},
-	},
    sounds = default.node_sound_stone_defaults()
 })
 
