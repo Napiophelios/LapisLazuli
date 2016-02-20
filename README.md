@@ -5,7 +5,9 @@ modified by Napiophelios
 
 This mod adds several decorative nodes
 based on Lapus Lazuli and Pyrite ore.
+
 Players can mine Lapis and Pyrite ores;
+
 craft stairs, slabs, columns, floor tiles, and bricks
 from the ores' drops.
 
