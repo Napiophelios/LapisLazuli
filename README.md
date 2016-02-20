@@ -24,11 +24,15 @@ code refinements by Xanthin
 ------------------------------------
 
 --Nodeboxes for Columns designed
+
 --by Artemis from Middle-Ages mod
+
 --Licensed: WTFPL
 
 --basecode is from Minetest Stairs mod
+
 -Licensed under GPLv3 or later,
+
 see http://www.gnu.org/licenses/gpl-3.0.html
 
 ===================================
@@ -37,26 +41,43 @@ Textures by Napiophelios
 License: WTFPL
 
 lapis_block.png
+
 lapis_brick.png
+
 lapis_brick_side.png
+
 lapis_brick_top.png
+
 lapis_cobble.png
+
 lapis_lazurite.png
+
 lapis_lazurite_brick.png
+
 lapis_lazurite_brick_side.png
+
 lapis_lazurite_brick_top.png
+
 lapis_stone.png
+
 lapis_tile.png
 
 ------------------------------------
 
-Pyrite textures based on/derived from Gambit's (PixelBox) Pyrite textures
+Pyrite textures based on/derived from 
+
+Gambit's (PixelBox) Pyrite textures
+
 License: WTFPL
 
 lapis_mineral_pyrite.png
+
 lapis_pyrite_block.png
+
 lapis_pyrite_ingot.png
+
 lapis_pyrite_nugget.png
+
 lapis_pyrite_sacred.png
 
 ===================================
