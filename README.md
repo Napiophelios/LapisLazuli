@@ -1,8 +1,5 @@
-# LapisLazuli
-
-
 ===========================
-Minetest mod "Lapis"
+#Minetest mod "Lapis"
 modified by Napiophelios
 ===========================
 
