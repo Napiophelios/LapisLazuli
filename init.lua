@@ -216,7 +216,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'lapis:lazurite_tile 2',
+	output = 'lapis:lapis_tile 2',
 	recipe = {
 		{ 'lapis:lazurite_brick'},
 	}
