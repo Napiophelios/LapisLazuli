@@ -4,6 +4,10 @@
 
 modified by Napiophelios
 
+Forum Topic :
+
+https://forum.minetest.net/viewtopic.php?f=9&t=12368
+
 ===========================
 
 This mod adds several decorative nodes
