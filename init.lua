@@ -12,6 +12,13 @@ minetest.register_node( "lapis:lapis_block",  {
    sunlight_propagates = false,
    is_ground_content = true,
    groups = {cracky=3},
+   drop = {
+		max_items = 1,
+		items = {
+			{items = {'lapis:lapis_stone'}, rarity = 10},
+			{items = {'lapis:lazurite_cobble'}},
+		},
+	},
    sounds = default.node_sound_stone_defaults()
 })
 
@@ -48,13 +55,6 @@ minetest.register_node( "lapis:lazurite_block",  {
    paramtype = "light",
    sunlight_propagates = false,
    is_ground_content = true,
-   drop = {
-		max_items = 1,
-		items = {
-			{items = {'lapis:lapis_stone'}, rarity = 10},
-			{items = {'lapis:lazurite_block'}},
-		},
-	},
    groups = {cracky=2},
    sounds = default.node_sound_stone_defaults()
 })
@@ -183,9 +183,9 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'lapis:lapis_stone 6',
+	output = 'lapis:lapis_stone 9',
 	recipe = {
-		{'lapis:lazurite_block'},
+		{'lapis:lapis_block'},
 	}
 })
 
