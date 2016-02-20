@@ -108,7 +108,7 @@ minetest.register_node( "lapis:pyrite_block",  {
 })
 
 -------------------
-	--Stairs & Slabs
+--Stairs & Slabs
 -------------------
 
 	if minetest.get_modpath("stairs") then
@@ -294,7 +294,7 @@ minetest.register_ore({
 		y_max          = -51,
 	})
 
-	----------
+----------
 --Aliases
 ----------
 
