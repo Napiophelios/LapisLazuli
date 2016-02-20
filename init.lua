@@ -41,7 +41,14 @@ minetest.register_node( "lapis:lapis_brick",  {
 
 minetest.register_node( "lapis:lapis_cobble",  {
    description = "Cobbled Lapis",
-   tiles = {"lapis_cobble.png"},
+   tiles = {
+   "lapis_cobble.png",
+   "lapis_cobble.png^[transformFY",
+   "lapis_cobble.png^[transformFX",
+   "lapis_cobble.png",
+   "lapis_cobble.png^[transformFX",
+   "lapis_cobble.png"
+   },
    paramtype = "light",
    is_ground_content = false,
    sunlight_propagates = false,
