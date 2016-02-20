@@ -99,8 +99,14 @@ minetest.register_node( "lapis:pyrite_ore",  {
 
 minetest.register_node( "lapis:pyrite_block",  {
    description = "Pyrite Block",
-   tiles = {"lapis_pyrite_sacred.png", "lapis_pyrite_block.png" },
+   tiles = {
+   "lapis_pyrite_sacred.png",
+   "lapis_pyrite_sacred.png",
+   "lapis_pyrite_block.png"
+   },
    paramtype = "light",
+   paramtype2 = "facedir",
+   legacy_facedir_simple = true,
    is_ground_content = false,
    sunlight_propagates = false,
    groups = {cracky=2},
