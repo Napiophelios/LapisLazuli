@@ -12,10 +12,11 @@ minetest.register_node( "lapis:lapis_block",  {
    sunlight_propagates = false,
    is_ground_content = true,
    groups = {cracky=3},
-   drop={
-	  items = {
-			{items = {"lapis:lapis_stone"}, rarity =10},
-		 {items = {'lapis:lapis_cobble'}},
+   drop = {
+		max_items = 1,
+		items = {
+			{items = {'lapis:lapis_stone'}, rarity = 10},
+			{items = {'lapis:lapis_cobble'}},
 		},
 	},
    sounds = default.node_sound_stone_defaults()
@@ -54,10 +55,11 @@ minetest.register_node( "lapis:lazurite_block",  {
    paramtype = "light",
    sunlight_propagates = false,
    is_ground_content = true,
-  drop={
-  	items = {
-			{items = {'lapis:lapis_stone 2'}, rarity =10},
-		 {items = {'lapis:lazurite_block'}},
+   drop = {
+		max_items = 1,
+		items = {
+			{items = {'lapis:lapis_stone'}, rarity = 10},
+			{items = {'lapis:lazurite_block'}},
 		},
 	},
    groups = {cracky=2},
@@ -97,11 +99,7 @@ minetest.register_node( "lapis:pyrite_ore",  {
    paramtype = "light",
    sunlight_propagates = false,
    is_ground_content = true,
-   drop={
-   items = {
-			 {items = {'lapis:pyrite_lump 2'}},
-		},
-	},
+   drop= 'lapis:pyrite_lump 2',
    groups = {cracky=2, not_in_creative_inventory =1},
    sounds = default.node_sound_stone_defaults() ,
 })
