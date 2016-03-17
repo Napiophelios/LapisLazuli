@@ -16,7 +16,7 @@ minetest.register_node( "lapis:lapis_block",  {
 		max_items = 1,
 		items = {
 			{items = {'lapis:lapis_stone'}, rarity = 10},
-			{items = {'lapis:lazurite_cobble'}},
+			{items = {'lapis:lapis_cobble'}},
 		},
 	},
    sounds = default.node_sound_stone_defaults()
