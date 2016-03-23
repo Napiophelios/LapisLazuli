@@ -13,9 +13,7 @@ https://forum.minetest.net/viewtopic.php?f=9&t=12368
 Lapis Lazuli mod requires
 
 Minetest 0.4.13 development build 
-
 (commit 1d69116 or later)
-
 for the new sheet ore parameters.
 
 
