@@ -10,6 +10,11 @@ https://forum.minetest.net/viewtopic.php?f=9&t=12368
 
 ===========================
 
+INSTRUCTIONS FOR USE:
+Rename extracted folder to "lapis"
+
+===========================
+
 This mod adds several decorative nodes
 
 based on Lapus Lazuli and Pyrite ore.
