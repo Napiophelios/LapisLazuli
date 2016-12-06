@@ -16,10 +16,8 @@ Minetest 0.4.13 development build
 (commit 1d69116 or later)
 for the new sheet ore parameters.
 
-
-INSTRUCTIONS FOR USE:
-
-Rename extracted folder to "lapis"
+and the development version of Minetest Game 0.4.14 
+for the new metal sound effects.
 
 ===========================
 
@@ -76,7 +74,7 @@ lapis_brick_top.png
 
 lapis_cobble.png
 
-lapis_lazurite.png
+lapis_lazurite_block.png
 
 lapis_lazurite_brick.png
 
@@ -84,9 +82,14 @@ lapis_lazurite_brick_side.png
 
 lapis_lazurite_brick_top.png
 
+lapis_rosace_front.png
+
+lapis_rosace_side.png
+
 lapis_stone.png
 
 lapis_tile.png
+
 
 ------------------------------------
 
