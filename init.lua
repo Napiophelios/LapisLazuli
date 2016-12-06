@@ -141,7 +141,7 @@ minetest.register_node("lapis:rosace", {
 --Stairs & Slabs
 -------------------
 -- Add support for Stairs Plus (in More Blocks), by Worldblender
-	if minetest.global_exists("moreblocks") then
+	if minetest.get_modpath("moreblocks") then
 
 	stairsplus:register_all("lapis", "lapis_block", "lapis:lapis_block", {
 	description = ("Lapis with Calcite"),
