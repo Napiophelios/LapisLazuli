@@ -1,3 +1,4 @@
+screwdriver = screwdriver or {}
 
 --dofile(minetest.get_modpath("lapis").."/columns.lua")
 
@@ -10,7 +11,7 @@ minetest.register_node( "lapis:lapis_block",  {
    tiles = {"lapis_block.png"},
    paramtype = "light",
    is_ground_content = true,
-   groups = {cracky=3},
+   groups = {cracky = 3},
    drop = {
 		max_items = 1,
 		items = {
@@ -32,8 +33,11 @@ minetest.register_node( "lapis:lapis_brick",  {
    "lapis_brick.png"
    },
    paramtype = "light",
+   paramtype2 = "facedir",
+   place_param2 = 0,
+   on_rotate = screwdriver.rotate_simple,
    is_ground_content = false,
-   groups = {cracky=2},
+   groups = {cracky = 3},
    sounds = default.node_sound_stone_defaults()
 })
 
@@ -49,7 +53,7 @@ minetest.register_node( "lapis:lapis_cobble",  {
    },
    paramtype = "light",
    is_ground_content = false,
-   groups = {cracky=3},
+   groups = {cracky = 3},
    sounds = default.node_sound_stone_defaults()
 })
 
@@ -58,7 +62,7 @@ minetest.register_node( "lapis:lazurite_block",  {
    tiles = {"lapis_lazurite_block.png"},
    paramtype = "light",
    is_ground_content = true,
-   groups = {cracky=2},
+   groups = {cracky = 3},
    sounds = default.node_sound_stone_defaults()
 })
 
@@ -73,8 +77,11 @@ minetest.register_node( "lapis:lazurite_brick",  {
    "lapis_lazurite_brick.png"
    },
    paramtype = "light",
+   paramtype2 = "facedir",
+   place_param2 = 0,
+   on_rotate = screwdriver.rotate_simple,
    is_ground_content = false,
-   groups = {cracky=1},
+   groups = {cracky = 3},
    sounds = default.node_sound_stone_defaults()
 })
 
@@ -83,7 +90,7 @@ minetest.register_node( "lapis:lapis_tile",  {
    tiles = {"lapis_tile.png" },
    is_ground_content = false,
    paramtype = 'light',
-   groups = {cracky=3},
+   groups = {cracky = 3},
    sounds = default.node_sound_stone_defaults()
    })
 
@@ -93,7 +100,7 @@ minetest.register_node( "lapis:pyrite_ore",  {
    paramtype = "light",
    is_ground_content = true,
    drop= 'lapis:pyrite_lump 2',
-   groups = {cracky=2},
+   groups = {cracky = 2},
    sounds = default.node_sound_stone_defaults() ,
 })
 
@@ -106,13 +113,28 @@ minetest.register_node( "lapis:pyrite_block",  {
    },
    paramtype = "light",
    paramtype2 = "facedir",
-   legacy_facedir_simple = true,
+   place_param2 = 0,
    is_ground_content = false,
-   groups = {cracky=2},
+   groups = {cracky = 2},
    sounds = default.node_sound_metal_defaults({
      footstep = {name = "default_hard_footstep", gain = 0.5},
      place = {name = "default_place_node_hard", gain = 1.0},
    }),
+})
+--Unused Rosace Stone from Darkage mod
+minetest.register_node("lapis:rosace", {
+	description = "Rose Stone",
+	tiles = {"lapis_rosace_front.png",
+	"lapis_rosace_front.png",
+	"lapis_rosace_side.png^[transformFX",
+	"lapis_rosace_side.png^[transformFYR90",
+	"lapis_rosace_side.png^[transformFY",
+	"lapis_rosace_side.png"},
+	paramtype2 = "facedir",
+	place_param2 = 0,
+	is_ground_content = false,
+	groups = {cracky = 3, stone = 2},
+	sounds = default.node_sound_stone_defaults(),
 })
 
 -------------------
@@ -136,7 +158,7 @@ minetest.register_node( "lapis:pyrite_block",  {
    "lapis_brick_side.png^[transformFX",
    "lapis_brick.png^[transformFX",
    "lapis_brick.png"},
-	groups = {cracky = 2},
+	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 	})
 
@@ -155,7 +177,7 @@ minetest.register_node( "lapis:pyrite_block",  {
 	stairsplus:register_all("lapis", "lapis_lazurite_block", "lapis:lazurite_block", {
 	description = ("Lazurite"),
 	tiles = {"lapis_lazurite_block.png"},
-	groups = {cracky = 2},
+	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 	})
 
@@ -167,7 +189,7 @@ minetest.register_node( "lapis:pyrite_block",  {
    "lapis_lazurite_brick_side.png^[transformFX",
    "lapis_lazurite_brick.png^[transformFX",
    "lapis_lazurite_brick.png"},
-	groups = {cracky = 1},
+	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 	})
 
@@ -180,9 +202,7 @@ minetest.register_node( "lapis:pyrite_block",  {
 
 	stairsplus:register_all("lapis", "pyrite_block", "lapis:pyrite_block", {
 	description = ("Pyrite Block"),
-	tiles = {"lapis_pyrite_sacred.png",
-   "lapis_pyrite_sacred.png",
-   "lapis_pyrite_block.png"},
+	tiles = {"lapis_pyrite_block.png"},
 	groups = {cracky = 2},
 	sounds = default.node_sound_metal_defaults({
      footstep = {name = "default_hard_footstep", gain = 0.5},
@@ -193,33 +213,35 @@ minetest.register_node( "lapis:pyrite_block",  {
 	elseif minetest.get_modpath("stairs") then
 
 	stairs.register_stair_and_slab("lapis_block", "lapis:lapis_block",
-	{cracky=3},
+	{cracky = 3},
 	{"lapis_block.png"},
 	"Lapis Stair",
 	"Lapis Slab",
 	default.node_sound_stone_defaults())
 
 	stairs.register_stair_and_slab("lapis_brick", "lapis:lapis_brick",
-	{cracky=3},
+	{cracky = 3},
 	{"lapis_brick.png"},
 	"Lapis Brick Stair",
 	"Lapis Brick Slab",
 	default.node_sound_stone_defaults())
+	
 	stairs.register_stair_and_slab("lapis_cobble", "lapis:lapis_cobble",
-	{cracky=3},
+	{cracky = 3},
 	{"lapis_cobble.png"},
 	"Lapis Cobble Stair",
 	"Lapis Cobble Slab",
 	default.node_sound_stone_defaults())
+	
 	stairs.register_stair_and_slab("lazurite", "lapis:lazurite_block",
-	{cracky=3},
+	{cracky = 3},
 	{"lapis_lazurite_block.png"},
 	"Lazurite Stair",
 	"Lazurite Slab",
 	default.node_sound_stone_defaults())
 
 	stairs.register_stair_and_slab("lazurite_brick", "lapis:lazurite_brick",
-	{cracky=3},
+	{cracky = 3},
 	{"lapis_lazurite_brick.png"},
 	"Lazurite Brick Stair",
 	"Lazurite Brick Slab",
@@ -302,6 +324,15 @@ minetest.register_craft({
 	output = 'lapis:pyrite_ingot 6',
 	recipe = {
 		{'lapis:pyrite_block'},
+	}
+})
+
+minetest.register_craft({
+	output = "lapis:rosace_stone 4",
+	recipe = {
+		{ "lapis:pyrite_ingot", "lapis:lapis_stone", "lapis:pyrite_ingot" },
+		{ "lapis:lapis_stone", "lapis:pyrite_ingot", "lapis:lapis_stone" },
+		{ "lapis:pyrite_ingot", "lapis:lapis_stone", "lapis:pyrite_ingot" },
 	}
 })
 
