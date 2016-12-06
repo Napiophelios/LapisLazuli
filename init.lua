@@ -100,7 +100,7 @@ minetest.register_node( "lapis:pyrite_ore",  {
    sunlight_propagates = false,
    is_ground_content = true,
    drop= 'lapis:pyrite_lump 2',
-   groups = {cracky=2, not_in_creative_inventory =1},
+   groups = {cracky=2},
    sounds = default.node_sound_stone_defaults() ,
 })
 
@@ -117,51 +117,117 @@ minetest.register_node( "lapis:pyrite_block",  {
    is_ground_content = false,
    sunlight_propagates = false,
    groups = {cracky=2},
-   sounds = default.node_sound_stone_defaults() ,
+   sounds = default.node_sound_metal_defaults() ,
 })
 
 -------------------
 --Stairs & Slabs
 -------------------
+-- Add support for Stairs Plus (in More Blocks), by Worldblender
+	if minetest.global_exists("stairsplus") then
+	
+	stairsplus:register_all("lapis", "lapis_block", "lapis:lapis_block", {
+	description = ("Lapis with Calcite"),
+	tiles = {"lapis_block.png"},
+	groups = {cracky = 3},
+	sounds = default.node_sound_stone_defaults(),
+	})
+	
+	stairsplus:register_all("lapis", "lapis_brick", "lapis:lapis_brick", {
+	description = ("Lapis Brick"),
+	tiles = {"lapis_brick_top.png",
+   "lapis_brick_top.png^[transformFXR90",
+   "lapis_brick_side.png",
+   "lapis_brick_side.png^[transformFX",
+   "lapis_brick.png^[transformFX",
+   "lapis_brick.png"},
+	groups = {cracky = 2},
+	sounds = default.node_sound_stone_defaults(),
+	})
+	
+	stairsplus:register_all("lapis", "lapis_cobble", "lapis:lapis_cobble", {
+	description = ("Cobbled Lapis"),
+	tiles = {"lapis_cobble.png",
+   "lapis_cobble.png^[transformFY",
+   "lapis_cobble.png^[transformFX",
+   "lapis_cobble.png",
+   "lapis_cobble.png^[transformFX",
+   "lapis_cobble.png"},
+	groups = {cracky = 3},
+	sounds = default.node_sound_stone_defaults(),
+	})
+	
+	stairsplus:register_all("lapis", "lapis_lazurite_block", "lapis:lazurite_block", {
+	description = ("Lazurite"),
+	tiles = {"lapis_lazurite_block.png"},
+	groups = {cracky = 2},
+	sounds = default.node_sound_stone_defaults(),
+	})
+	
+	stairsplus:register_all("lapis", "lapis_lazurite_brick", "lapis:lazurite_brick", {
+	description = ("Lazurite Brick"),
+	tiles = {"lapis_lazurite_brick_top.png",
+   "lapis_lazurite_brick_top.png^[transformFXR90",
+   "lapis_lazurite_brick_side.png",
+   "lapis_lazurite_brick_side.png^[transformFX",
+   "lapis_lazurite_brick.png^[transformFX",
+   "lapis_lazurite_brick.png"},
+	groups = {cracky = 1},
+	sounds = default.node_sound_stone_defaults(),
+	})
+	
+	stairsplus:register_all("lapis", "lapis_tile", "lapis:lapis_tile", {
+	description = ("Lapis Floor Tile"),
+	tiles = {"lapis_tile.png"},
+	groups = {cracky = 3},
+	sounds = default.node_sound_stone_defaults(),
+	})
+	
+	stairsplus:register_all("lapis", "pyrite_block", "lapis:pyrite_block", {
+	description = ("Pyrite Block"),
+	tiles = {"lapis_pyrite_sacred.png",
+   "lapis_pyrite_sacred.png",
+   "lapis_pyrite_block.png"},
+	groups = {cracky = 2},
+	sounds = default.node_sound_metal_defaults(),
+	})
+	
+-- Fall back to default stairs if moreblocks is not installed or enabled
+	elseif minetest.get_modpath("stairs") then
 
-	if minetest.get_modpath("stairs") then
+	stairs.register_stair_and_slab("lapis_block", "lapis:lapis_block",
+	{cracky=3},
+	{"lapis_block.png"},
+	"Lapis Stair",
+	"Lapis Slab",
+	default.node_sound_stone_defaults())
 
-			stairs.register_stair_and_slab("lapis_block", "lapis:lapis_block",
-		{cracky=3},
-		{"lapis_block.png"},
-		"Lapis Stair",
-		"Lapis Slab",
-		default.node_sound_stone_defaults())
+	stairs.register_stair_and_slab("lapis_brick", "lapis:lapis_brick",
+	{cracky=3},
+	{"lapis_brick.png"},
+	"Lapis Brick Stair",
+	"Lapis Brick Slab",
+	default.node_sound_stone_defaults())
+	stairs.register_stair_and_slab("lapis_cobble", "lapis:lapis_cobble",
+	{cracky=3},
+	{"lapis_cobble.png"},
+	"Lapis Cobble Stair",
+	"Lapis Cobble Slab",
+	default.node_sound_stone_defaults())
+	stairs.register_stair_and_slab("lazurite", "lapis:lazurite_block",
+	{cracky=3},
+	{"lapis_lazurite_block.png"},
+	"Lazurite Stair",
+	"Lazurite Slab",
+	default.node_sound_stone_defaults())
 
-		stairs.register_stair_and_slab("lapis_brick", "lapis:lapis_brick",
-		{cracky=3},
-		{"lapis_brick.png"},
-		"Lapis Brick Stair",
-		"Lapis Brick Slab",
-		default.node_sound_stone_defaults())
-
-		stairs.register_stair_and_slab("lapis_cobble", "lapis:lapis_cobble",
-		{cracky=3},
-		{"lapis_cobble.png"},
-		"Lapis Cobble Stair",
-		"Lapis Cobble Slab",
-		default.node_sound_stone_defaults())
-
-		stairs.register_stair_and_slab("lazurite", "lapis:lazurite_block",
-		{cracky=3},
-		{"lapis_lazurite_block.png"},
-		"Lazurite Stair",
-		"Lazurite Slab",
-		default.node_sound_stone_defaults())
-
-		stairs.register_stair_and_slab("lazurite_brick", "lapis:lazurite_brick",
-		{cracky=3},
-		{"lapis_lazurite_brick.png"},
-		"Lazurite Brick Stair",
-		"Lazurite Brick Slab",
-		default.node_sound_stone_defaults())
-
-		end
+	stairs.register_stair_and_slab("lazurite_brick", "lapis:lazurite_brick",
+	{cracky=3},
+	{"lapis_lazurite_brick.png"},
+	"Lazurite Brick Stair",
+	"Lazurite Brick Slab",
+	default.node_sound_stone_defaults())
+	end
 
 ---------------
 -- Crafts Items
