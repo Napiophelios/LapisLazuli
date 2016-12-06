@@ -1,5 +1,5 @@
 
-dofile(minetest.get_modpath("lapis").."/columns.lua")
+--dofile(minetest.get_modpath("lapis").."/columns.lua")
 
 ----------
 --Nodes
@@ -9,7 +9,6 @@ minetest.register_node( "lapis:lapis_block",  {
    description = "Lapis with Calcite",
    tiles = {"lapis_block.png"},
    paramtype = "light",
-   sunlight_propagates = false,
    is_ground_content = true,
    groups = {cracky=3},
    drop = {
@@ -34,7 +33,6 @@ minetest.register_node( "lapis:lapis_brick",  {
    },
    paramtype = "light",
    is_ground_content = false,
-   sunlight_propagates = false,
    groups = {cracky=2},
    sounds = default.node_sound_stone_defaults()
 })
@@ -51,7 +49,6 @@ minetest.register_node( "lapis:lapis_cobble",  {
    },
    paramtype = "light",
    is_ground_content = false,
-   sunlight_propagates = false,
    groups = {cracky=3},
    sounds = default.node_sound_stone_defaults()
 })
@@ -60,7 +57,6 @@ minetest.register_node( "lapis:lazurite_block",  {
    description = "Lazurite",
    tiles = {"lapis_lazurite_block.png"},
    paramtype = "light",
-   sunlight_propagates = false,
    is_ground_content = true,
    groups = {cracky=2},
    sounds = default.node_sound_stone_defaults()
@@ -78,7 +74,6 @@ minetest.register_node( "lapis:lazurite_brick",  {
    },
    paramtype = "light",
    is_ground_content = false,
-   sunlight_propagates = false,
    groups = {cracky=1},
    sounds = default.node_sound_stone_defaults()
 })
@@ -87,7 +82,6 @@ minetest.register_node( "lapis:lapis_tile",  {
    description = "Lapis Floor Tile",
    tiles = {"lapis_tile.png" },
    is_ground_content = false,
-   sunlight_propagates = false,
    paramtype = 'light',
    groups = {cracky=3},
    sounds = default.node_sound_stone_defaults()
@@ -97,7 +91,6 @@ minetest.register_node( "lapis:pyrite_ore",  {
    description = "Pyrite Ore",
    tiles = {"default_stone.png^lapis_mineral_pyrite.png" },
    paramtype = "light",
-   sunlight_propagates = false,
    is_ground_content = true,
    drop= 'lapis:pyrite_lump 2',
    groups = {cracky=2},
@@ -115,9 +108,11 @@ minetest.register_node( "lapis:pyrite_block",  {
    paramtype2 = "facedir",
    legacy_facedir_simple = true,
    is_ground_content = false,
-   sunlight_propagates = false,
    groups = {cracky=2},
-   sounds = default.node_sound_metal_defaults() ,
+   sounds = default.node_sound_metal_defaults({
+     footstep = {name = "default_hard_footstep", gain = 0.5},
+     place = {name = "default_place_node_hard", gain = 1.0},
+   }),
 })
 
 -------------------
@@ -125,14 +120,14 @@ minetest.register_node( "lapis:pyrite_block",  {
 -------------------
 -- Add support for Stairs Plus (in More Blocks), by Worldblender
 	if minetest.global_exists("stairsplus") then
-	
+
 	stairsplus:register_all("lapis", "lapis_block", "lapis:lapis_block", {
 	description = ("Lapis with Calcite"),
 	tiles = {"lapis_block.png"},
 	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 	})
-	
+
 	stairsplus:register_all("lapis", "lapis_brick", "lapis:lapis_brick", {
 	description = ("Lapis Brick"),
 	tiles = {"lapis_brick_top.png",
@@ -144,7 +139,7 @@ minetest.register_node( "lapis:pyrite_block",  {
 	groups = {cracky = 2},
 	sounds = default.node_sound_stone_defaults(),
 	})
-	
+
 	stairsplus:register_all("lapis", "lapis_cobble", "lapis:lapis_cobble", {
 	description = ("Cobbled Lapis"),
 	tiles = {"lapis_cobble.png",
@@ -156,14 +151,14 @@ minetest.register_node( "lapis:pyrite_block",  {
 	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 	})
-	
+
 	stairsplus:register_all("lapis", "lapis_lazurite_block", "lapis:lazurite_block", {
 	description = ("Lazurite"),
 	tiles = {"lapis_lazurite_block.png"},
 	groups = {cracky = 2},
 	sounds = default.node_sound_stone_defaults(),
 	})
-	
+
 	stairsplus:register_all("lapis", "lapis_lazurite_brick", "lapis:lazurite_brick", {
 	description = ("Lazurite Brick"),
 	tiles = {"lapis_lazurite_brick_top.png",
@@ -175,23 +170,25 @@ minetest.register_node( "lapis:pyrite_block",  {
 	groups = {cracky = 1},
 	sounds = default.node_sound_stone_defaults(),
 	})
-	
+
 	stairsplus:register_all("lapis", "lapis_tile", "lapis:lapis_tile", {
 	description = ("Lapis Floor Tile"),
 	tiles = {"lapis_tile.png"},
 	groups = {cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 	})
-	
+
 	stairsplus:register_all("lapis", "pyrite_block", "lapis:pyrite_block", {
 	description = ("Pyrite Block"),
 	tiles = {"lapis_pyrite_sacred.png",
    "lapis_pyrite_sacred.png",
    "lapis_pyrite_block.png"},
 	groups = {cracky = 2},
-	sounds = default.node_sound_metal_defaults(),
+	sounds = default.node_sound_metal_defaults({
+     footstep = {name = "default_hard_footstep", gain = 0.5},
+     place = {name = "default_place_node_hard", gain = 1.0}}),
 	})
-	
+
 -- Fall back to default stairs if moreblocks is not installed or enabled
 	elseif minetest.get_modpath("stairs") then
 
