@@ -18,7 +18,7 @@ enable_round_lapis_columns = true
 ```
 ("round" is in the variable name to distinguish the columns from castle masonry's columns which require a lapis mod but are square)
 
-===========================
+------------------------------------
 
 Lapis Lazuli mod requires
 
@@ -30,7 +30,7 @@ and the development version of Minetest Game 0.4.14
 (commit fa9a345 or later)
 for the new metal sound effects.
 
-===========================
+------------------------------------
 
 This mod adds several decorative nodes
 
@@ -41,7 +41,7 @@ Players can mine Lapis and Pyrite ores;
 craft stairs, slabs, columns, floor tiles, and bricks
 from the ores' drops.
 
-=================================
+------------------------------------
 
 the original Minetest mod:
 
@@ -70,7 +70,7 @@ code refinements by Xanthin
 
 see http://www.gnu.org/licenses/gpl-3.0.html
 
-===================================
+------------------------------------
 
 Textures by Napiophelios
 License: WTFPL
@@ -120,7 +120,7 @@ lapis_pyrite_nugget.png
 
 lapis_pyrite_sacred.png
 
-===================================
+------------------------------------
 
 WTFPL:
 This program is free software. It comes without any warranty, to
@@ -129,7 +129,7 @@ and/or modify it under the terms of the Do What The Fuck You Want
 To Public License, Version 2, as published by Sam Hocevar. See
 http://sam.zoy.org/wtfpl/COPYING for more details.
 
-===================================
+------------------------------------
 
             DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
                     Version 2, December 2004
@@ -145,4 +145,4 @@ http://sam.zoy.org/wtfpl/COPYING for more details.
 
   0. You just DO WHAT THE FUCK YOU WANT TO.
 
-===================================
+------------------------------------
