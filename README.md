@@ -1,6 +1,4 @@
-===========================
-
-#Minetest mod "Lapis"
+# Minetest mod "Lapis"
 
 modified by Napiophelios
 
@@ -10,7 +8,7 @@ https://forum.minetest.net/viewtopic.php?f=9&t=12368
 
 ![Preview](https://forum.minetest.net/download/file.php?mode=view&id=2780&sid=2afc22e146d22d7b15e6889ac4eeedff)
 
-===========================
+------------------------------------
 
 Enable the columns in minetest.conf as follows:
 ```
