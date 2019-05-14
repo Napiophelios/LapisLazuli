@@ -1,4 +1,4 @@
-# Minetest mod "Lapis"
+# "Lapis" Minetest Mod
 
 modified by Napiophelios
 
