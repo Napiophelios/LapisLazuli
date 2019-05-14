@@ -14,7 +14,8 @@ Enable the columns in minetest.conf as follows:
 ```
 enable_round_lapis_columns = true
 ```
-("round" is in the variable name to distinguish the columns from castle masonry's columns which require a lapis mod but are square)
+- setting by Poikilos ("round" is in the variable name to distinguish the columns from castle masonry's columns which require a lapis mod but are square)
+
 
 ------------------------------------
 
