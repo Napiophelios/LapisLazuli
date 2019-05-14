@@ -10,6 +10,15 @@ https://forum.minetest.net/viewtopic.php?f=9&t=12368
 
 ![Preview](https://forum.minetest.net/download/file.php?mode=view&id=2780&sid=2afc22e146d22d7b15e6889ac4eeedff)
 
+Usage
+=====
+
+Enable the columns in minetest.conf as follows:
+```
+enable_round_lapis_columns = true
+```
+("round" is in the variable name to distinguish the columns from castle masonry's columns which require a lapis mod but are square)
+
 ===========================
 
 Lapis Lazuli mod requires
