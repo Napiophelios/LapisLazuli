@@ -1,6 +1,8 @@
 screwdriver = screwdriver or {}
 
---dofile(minetest.get_modpath("lapis").."/columns.lua")
+if minetest.settings:get_bool("enable_round_lapis_columns") then
+    dofile(minetest.get_modpath("lapis").."/columns.lua")
+end
 
 ----------
 --Nodes
