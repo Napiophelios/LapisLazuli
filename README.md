@@ -12,9 +12,9 @@ https://forum.minetest.net/viewtopic.php?f=9&t=12368
 
 Enable the columns in minetest.conf as follows:
 ```
-enable_round_lapis_columns = true
+enable_lapis_mod_columns = true
 ```
-- setting by Poikilos ("round" is in the variable name to distinguish the columns from castle masonry's columns which require a lapis mod but are square)
+- setting by Poikilos: "lapis_mod" is in the variable name to distinguish the columns from castle masonry's columns (which require a lapis mod but are square)
 
 
 ------------------------------------
